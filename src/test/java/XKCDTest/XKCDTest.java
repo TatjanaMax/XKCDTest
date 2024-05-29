@@ -30,13 +30,12 @@ public class XKCDTest {
     public void myTest() throws InterruptedException {
 
         driver.get(baseURL);
-        String Firstpictures = driver.findElement(By.xpath("//body/div[@id='middleContainer']/div[@id='comic']/img[1]")).getAttribute("src");
+        String FirstPictures = driver.findElement(By.xpath("//body/div[@id='middleContainer']/div[@id='comic']/img[1]")).getAttribute("src");
         driver.findElement(By.xpath("//*[@id=\"middleContainer\"]/ul[1]/li[3]/a")).click();
         Thread.sleep(1000);
         String SecondPictures = driver.findElement(By.xpath("//body/div[@id='middleContainer']/div[@id='comic']/img[1]")).getAttribute("src");
         Thread.sleep(1000);
-        Assert.assertNotEquals(Firstpictures, SecondPictures);
-
+        Assert.assertNotEquals(FirstPictures, SecondPictures);
 
     }
 
